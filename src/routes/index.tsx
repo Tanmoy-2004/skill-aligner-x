@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "MatchMyResume — Score your resume against any job" },
       {
         property: "og:description",
-        content: "Match score, skills gap, missing keywords and rewritten bullets in one pass.",
+        content: "Paste a resume and a job description, get a match score, skills gap table, missing keywords, rewritten bullets and a cover letter.",
       },
     ],
   }),

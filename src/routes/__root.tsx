@@ -77,20 +77,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MatchMyResume — Resume to Job Match Analysis" },
+      { title: "MatchMyResume — Score your resume against any job" },
       {
         name: "description",
         content:
-          "Paste your resume and a job description to get a match score, skills gap table and rewritten bullets.",
+          "Paste a resume and a job description, get a match score, skills gap table, missing keywords, rewritten bullets and a cover letter.",
       },
-      { property: "og:title", content: "MatchMyResume" },
+      { property: "og:title", content: "MatchMyResume — Score your resume against any job" },
       {
         property: "og:description",
-        content: "Score your resume against any job description in seconds.",
+        content: "Paste a resume and a job description, get a match score, skills gap table, missing keywords, rewritten bullets and a cover letter.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "MatchMyResume — Score your resume against any job" },
+      { name: "twitter:description", content: "Paste a resume and a job description, get a match score, skills gap table, missing keywords, rewritten bullets and a cover letter." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/bc71a0cb-022d-4801-86f6-ff83b13deb66" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/bc71a0cb-022d-4801-86f6-ff83b13deb66" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
