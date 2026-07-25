@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const analysisSchema = z.object({
-  matchScore: z.number().min(0).max(100),
+  matchScore: z.number(),
   summary: z.string(),
   roleTitle: z.string(),
   skills: z.array(
@@ -12,8 +12,10 @@ export const analysisSchema = z.object({
       status: z.enum(["strong", "partial", "missing"]),
     }),
   ),
-  missingKeywords: z.array(z.string()),
-  bulletRewrites: z.array(z.object({ before: z.string(), after: z.string() })),
+  missingKeywords: z.array(z.object({ keyword: z.string(), reason: z.string() })),
+  bulletRewrites: z.array(
+    z.object({ before: z.string(), weakness: z.string(), after: z.string() }),
+  ),
   coverLetter: z.string(),
 });
 

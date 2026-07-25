@@ -21,9 +21,8 @@ export const analyseResume = createServerFn({ method: "POST" })
       const { output } = await generateText({
         model: gateway("google/gemini-3.6-flash"),
         output: Output.object({ schema: analysisSchema }),
-        system:
-          "You are a senior technical recruiter and resume editor. Compare a resume against a job description. Be specific, evidence-based and concise. matchScore is 0-100. Provide 6-10 skill rows covering the most important requirements, 5-12 missing ATS keywords (only ones truly absent from the resume), 3-5 bullet rewrites that quantify impact and mirror the job language, and a 180-250 word cover letter in the candidate's voice with no placeholders other than [Company] if the company is unknown.",
-        prompt: `JOB DESCRIPTION:\n${data.job}\n\nRESUME:\n${data.resume}`,
+        system: SYSTEM_PROMPT,
+        prompt: `RESUME:\n"""\n${data.resume}\n"""\n\nJOB DESCRIPTION:\n"""\n${data.job}\n"""`,
       });
       return output;
     } catch (err: unknown) {
