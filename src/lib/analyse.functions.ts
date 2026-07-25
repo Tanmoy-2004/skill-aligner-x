@@ -31,6 +31,7 @@ export const analyseResume = createServerFn({ method: "POST" })
       if (msg.includes("429")) throw new Error("Rate limit reached. Please try again in a moment.");
       if (msg.includes("402"))
         throw new Error("AI credits exhausted. Add credits in your Lovable workspace to continue.");
+      console.error("[analyse] failure:", msg);
       throw new Error("Analysis failed. Please try again.");
     }
   });
