@@ -1,3 +1,27 @@
+# MatchMyResume - Resume vs JD Analyser
+
+An AI-powered application that analyses a resume against a job description and provides a matching analysis.
+
+## 🎥 Project Demo
+
+👉 [Watch the 60-second Loom Demo](https://www.loom.com/share/c98f396f3b2d4901aa243ffca72da597)
+
+## Features
+
+- Resume analysis
+- Job description matching
+- AI-powered insights
+- ...
+
+
+
+
+
+
+
+
+
+
 # Welcome to your Lovable project
 
 This project was built with [Lovable](https://lovable.dev).
