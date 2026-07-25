@@ -97,21 +97,29 @@ function Results() {
         </Section>
 
         {data.missingKeywords.length > 0 && (
-          <Section title="Missing keywords">
+          <Section title="Top missing keywords">
             <div className="flex flex-wrap gap-2">
               {data.missingKeywords.map((k) => (
                 <span
-                  key={k}
+                  key={k.keyword}
                   className="rounded-full border border-destructive/25 bg-destructive-soft px-3.5 py-1.5 text-sm font-medium text-destructive"
                 >
-                  {k}
+                  {k.keyword}
                 </span>
               ))}
             </div>
+            <ol className="mt-4 space-y-2">
+              {data.missingKeywords.map((k, i) => (
+                <li key={k.keyword} className="text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-mono text-xs text-destructive">{i + 1}.</span>{" "}
+                  <span className="font-semibold text-foreground">{k.keyword}</span> — {k.reason}
+                </li>
+              ))}
+            </ol>
           </Section>
         )}
 
-        <Section title="Bullet rewrites">
+        <Section title="Weakest bullet rewrites">
           <div className="space-y-4">
             {data.bulletRewrites.map((b, i) => (
               <div
@@ -123,6 +131,9 @@ function Results() {
                     Before
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.before}</p>
+                  {b.weakness && (
+                    <p className="mt-3 text-xs leading-relaxed text-destructive">{b.weakness}</p>
+                  )}
                 </div>
                 <div className="bg-primary-soft/60 p-5">
                   <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-foreground">
